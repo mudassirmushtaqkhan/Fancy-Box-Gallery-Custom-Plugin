@@ -1,0 +1,81 @@
+/* Default gallery for desktop */
+.crexed-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+}
+
+.crexed-gallery-item {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.crexed-gallery-image {
+    width: 100%;
+    object-fit: contain;
+    transition: transform 3s ease-in-out;
+}
+
+.crexed-gallery-item:hover .crexed-gallery-image {
+    transform: translateY(-75%);
+}
+
+.crexed-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.crexed-gallery-item:hover .crexed-overlay {
+    opacity: 1;
+}
+
+.crexed-plus {
+    font-size: 2em;
+    color: #fff;
+}
+
+.mobile-navigation {
+    display: none;
+}
+/* Default gallery for desktop */
+.crexed-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+}
+
+
+/* Media query for mobile */
+@media only screen and (max-width: 600px) {
+    .crexed-gallery-container {
+        grid-template-columns: 1fr; /* Simplified syntax */
+        gap: 0px;
+    }
+    
+    /* This will hide gallery items on mobile. Remove if you want to show them */
+    /* .crexed-gallery-item {
+        display: none;
+    } */
+
+    .mobile-navigation {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    .crexed-gallery-item{
+        display:none;
+    }
+    
+}
